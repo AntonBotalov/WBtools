@@ -30,12 +30,12 @@ if uploaded_files:
         'Доставка': 'sum'
     })
 
-    summary_df['Итого'] = summary_df['К перечислению'] - summary_df['Доставка']
+    summary_df['Налог 7%'] = summary_df['К перечислению'] * 0.07
     
-    summary_df['Итого -7%'] = summary_df['К перечислению'] * 0.93 - summary_df['Доставка']
+    summary_df['Итого'] = summary_df['К перечислению'] * 0.93 - summary_df['Доставка']
 
 
-    for col in ['К перечислению', 'Доставка', 'Итого', 'Итого -7%']:
+    for col in ['К перечислению', 'Доставка', 'Налог 7%', 'Итого']:
         summary_df[col] = summary_df[col].apply(lambda x: f"{x:.2f}".replace('.', ','))
 
     
