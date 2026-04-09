@@ -32,7 +32,7 @@ if uploaded_files:
 
     summary_df['Итого'] = summary_df['К перечислению'] - summary_df['Доставка']
     
-    summary_df['Итого -7%'] = summary_df['Итого'] * 0.93
+    summary_df['Итого -7%'] = summary_df['К перечислению'] * 0.93 - summary_df['Доставка']
 
 
     for col in ['К перечислению', 'Доставка', 'Итого', 'Итого -7%']:
